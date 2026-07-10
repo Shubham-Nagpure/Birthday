@@ -1,0 +1,30 @@
+// Prisma schema for wishtoria (Postgres / Supabase).
+// Run:  npx prisma migrate dev --name init   (after setting DATABASE_URL)
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Site {
+  id                String    @id @default(cuid())
+  slug              String    @unique
+  ownerEmail        String?
+  plan              String // free | basic | premium
+  template          String    @default("romantic")
+  pages             Json // page ids in order (JSON array — portable across Postgres/SQLite)
+  content           Json // SiteContent
+  amount            Int       @default(0) // paise
+  currency          String    @default("INR")
+  status            String    @default("draft") // draft | preview | paid
+  razorpayOrderId   String?   @unique
+  razorpayPaymentId String?
+  createdAt         DateTime  @default(now())
+  paidAt            DateTime?
+
+  @@index([razorpayOrderId])
+}

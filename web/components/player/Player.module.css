@@ -1,0 +1,162 @@
+.root {
+  min-height: 100vh;
+  position: relative;
+  /* notebook feel: faint ruled lines + paper grain over the template gradient */
+  background:
+    repeating-linear-gradient(to bottom,
+      transparent 0, transparent 43px,
+      rgba(45, 26, 36, 0.05) 43px, rgba(45, 26, 36, 0.05) 44px),
+    var(--paper),
+    linear-gradient(135deg, var(--g1) 0%, var(--g2) 100%);
+  background-size: auto, 1100px 1100px, cover;
+  background-repeat: repeat, repeat, no-repeat;
+  background-position: center top, center, center;
+  background-blend-mode: normal, multiply, normal;
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+.particles { position: fixed; inset: 0; z-index: 1; pointer-events: none; }
+.root > .app, .root > .ribbon, .root > .music, .root > .badge { position: relative; z-index: 2; }
+.app { width: 100%; margin: 0; padding: 0; min-height: 100vh; }
+
+.pg {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; gap: 1.2rem; min-height: 100vh;
+  padding: 2rem 1.2rem; animation: fade 0.6s ease;
+}
+@keyframes fade { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+
+.title { font-size: clamp(1.6rem, 5vw, 2.4rem); font-weight: 700; }
+.sub { font-family: 'Poppins', sans-serif; color: #6B5860; }
+
+/* ---- intro (matches the original typewriter + glow + netflix-zoom) ---- */
+.introContent { cursor: pointer; text-align: center; }
+.greet {
+  font-family: 'Fredoka', sans-serif; font-size: 1.6rem; font-weight: 400;
+  color: var(--ink); opacity: 0.75; letter-spacing: 0.5px; margin-bottom: 6px;
+  transition: opacity 0.5s ease; min-height: 1.6rem;
+}
+.greetHide { opacity: 0 !important; }
+.bigName {
+  font-family: 'Kalam', 'Fredoka', cursive;
+  font-size: clamp(2.8rem, 12vw, 6rem); font-weight: 700; color: var(--accent);
+  line-height: 1.25; white-space: nowrap;
+  transition: text-shadow 0.8s ease, transform 0.5s ease, color 0.3s ease;
+}
+.char {
+  display: inline-block; opacity: 0; transform: translateY(0.3em) scale(0.94);
+  transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.22, 0.9, 0.28, 1), color 0.3s ease;
+  will-change: opacity, transform;
+}
+.charVisible { opacity: 1; transform: translateY(0) scale(1); }
+.glow { animation: namePulse 1.7s ease-in-out infinite; }
+@keyframes namePulse {
+  0%, 100% { transform: scale(1); text-shadow: 0 0 10px rgba(255,92,154,.55), 0 0 26px rgba(214,36,110,.45), 0 0 55px rgba(214,36,110,.28); }
+  50% { transform: scale(1.045); text-shadow: 0 0 16px rgba(255,122,174,.95), 0 0 40px rgba(214,36,110,.7), 0 0 90px rgba(214,36,110,.5); }
+}
+.zoom { animation: netflixZoom 2s forwards cubic-bezier(0.7, 0, 0.3, 1); }
+@keyframes netflixZoom {
+  0% { transform: scale(1); filter: blur(0); opacity: 1; }
+  30% { transform: scale(0.9); filter: blur(0); opacity: 1; }
+  100% { transform: scale(32); filter: blur(15px); opacity: 0; }
+}
+.hint { font-family: 'Poppins', sans-serif; font-size: 0.9rem; color: var(--ink-soft, #6B5860); margin-top: 1.4rem; opacity: 0; transition: opacity 0.6s ease; }
+.hintOn { opacity: 0.7; animation: hintPulse 2s ease-in-out infinite; }
+@keyframes hintPulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 0.8; } }
+.flash { position: fixed; inset: 0; background: #fff; z-index: 9999; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; }
+.flashOn { opacity: 1; }
+.card {
+  background: #fff; border: 2.5px solid var(--line); box-shadow: 8px 8px 0 var(--line);
+  border-radius: 24px; padding: 2rem; max-width: 640px; width: 100%;
+}
+.story { font-family: 'Poppins', sans-serif; line-height: 1.8; margin: 1.2rem 0; text-align: left; white-space: pre-wrap; }
+
+/* ---- story "Do You Know" (matches original: full-width, cursive, typed) ---- */
+.storyPg {
+  display: flex; flex-direction: column; align-items: stretch; text-align: left;
+  height: 100vh; width: 100%; padding: clamp(28px, 5vh, 60px) clamp(22px, 6vw, 90px);
+  animation: fade 0.6s ease;
+}
+.storyTitle {
+  font-family: 'Fredoka', sans-serif; font-size: clamp(2rem, 5vw, 3.25rem); font-weight: 700;
+  color: var(--ink); margin-bottom: 22px; letter-spacing: -0.5px; line-height: 1.1;
+}
+.storyScroll {
+  overflow-y: auto; flex: 1 1 auto; min-height: 0; margin-top: 18px;
+  scrollbar-width: thin; scrollbar-color: var(--accent) rgba(0, 0, 0, 0.05);
+}
+.storyScroll::-webkit-scrollbar { width: 8px; }
+.storyScroll::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.05); border-radius: 10px; }
+.storyScroll::-webkit-scrollbar-thumb { background: var(--accent); border: 2px solid var(--line); border-radius: 10px; }
+.storyText {
+  font-family: 'Caveat', 'Kalam', cursive; font-size: clamp(1.45rem, 2vw, 2rem);
+  line-height: 1.5; color: #3A2A32; font-weight: 500; white-space: pre-wrap;
+}
+.schar { animation: sfade 0.4s ease both; }
+@keyframes sfade { from { opacity: 0; } to { opacity: 1; } }
+.storyBtnWrap { align-self: center; margin-top: 1.5rem; flex: 0 0 auto; }
+
+.btn {
+  font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 1.05rem; color: #fff;
+  background: var(--accent); border: 2.5px solid var(--line); border-radius: 40px;
+  padding: 0.8rem 1.6rem; cursor: pointer; box-shadow: 5px 5px 0 var(--line);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.btn:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--line); }
+.btn:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--line); }
+
+/* gallery */
+.gallery { width: 100%; max-width: 560px; position: relative; }
+.slideImg { width: 100%; height: 340px; object-fit: cover; border: 2.5px solid var(--line); border-radius: 20px; box-shadow: 6px 6px 0 var(--line); }
+.slidePh { display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 3rem; background: #FFF0F5; gap: .5rem; }
+.slidePh span { font-size: 1rem; font-family: 'Poppins', sans-serif; color: #6B5860; }
+.slideInfo h3 { margin-top: 1rem; font-size: 1.3rem; }
+.slideInfo p { font-family: 'Poppins', sans-serif; color: #6B5860; }
+.galCtl { display: flex; justify-content: space-between; position: absolute; top: 150px; width: 100%; }
+.gbtn { width: 46px; height: 46px; border-radius: 50%; border: 2.5px solid var(--line); background: #fff; font-size: 1.5rem; cursor: pointer; box-shadow: 3px 3px 0 var(--line); }
+
+/* puzzle */
+.puzzle { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; width: 300px; height: 300px; background: #fff; border: 2.5px solid var(--line); box-shadow: 6px 6px 0 var(--line); border-radius: 16px; padding: 6px; }
+.tile { background: #FFDCE8; border: 2px solid var(--line); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.4rem; cursor: pointer; background-size: 300px 300px; }
+.tileEmpty { visibility: hidden; }
+.moves { font-family: 'Poppins', sans-serif; color: #6B5860; }
+
+/* letter */
+.envelope { background: #fff; border: 2.5px solid var(--line); box-shadow: 8px 8px 0 var(--line); border-radius: 16px; max-width: 560px; width: 100%; overflow: hidden; cursor: pointer; }
+.paper { max-height: 0; opacity: 0; padding: 0 2rem; transition: max-height 0.6s ease, opacity 0.5s, padding 0.4s; text-align: left; }
+.paperOpen { max-height: 1200px; opacity: 1; padding: 2rem; }
+.salu { font-family: 'Caveat', cursive; font-size: 1.8rem; color: var(--accent); margin-bottom: 1rem; }
+.body { font-family: 'Poppins', sans-serif; line-height: 1.9; white-space: pre-wrap; }
+.valed { font-family: 'Caveat', cursive; font-size: 1.5rem; margin-top: 1.2rem; text-align: right; white-space: pre-wrap; }
+.tip { font-family: 'Poppins', sans-serif; color: #6B5860; margin-top: .5rem; }
+
+/* quiz */
+.qOpt { display: block; width: 100%; text-align: left; margin: .5rem 0; padding: .8rem 1rem; font-family: 'Poppins', sans-serif; background: #FFF7FA; border: 2.5px solid var(--line); border-radius: 14px; cursor: pointer; font-size: 1rem; }
+.qOpt:hover { background: #FFEAEF; }
+.qRight { background: #D6F5E3; border-color: #159a5b; }
+.qWrong { background: #FFD9E0; }
+.qNum { font-family: 'Poppins', sans-serif; color: #6B5860; margin-bottom: .6rem; }
+.qText { font-size: 1.3rem; margin-bottom: 1rem; }
+
+/* reasons */
+.reasons { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; max-width: 640px; }
+.rcard { background: #fff; border: 2.5px solid var(--line); box-shadow: 5px 5px 0 var(--line); border-radius: 16px; padding: 1.2rem; font-family: 'Poppins', sans-serif; max-width: 280px; animation: pop .4s both; }
+@keyframes pop { from { opacity: 0; transform: scale(.8); } to { opacity: 1; transform: none; } }
+
+/* ask (No runs away) */
+.askStage { position: relative; width: 100%; max-width: 520px; min-height: 240px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.6rem; padding: 1rem; }
+.askQ { font-size: clamp(1.4rem, 5vw, 2.1rem); font-weight: 700; }
+.askBtns { display: flex; gap: 1.2rem; align-items: center; flex-wrap: wrap; justify-content: center; }
+.askYes { transition: transform .15s ease; }
+.askNo { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 1.05rem; color: var(--ink); background: #fff; border: 2.5px solid var(--line); border-radius: 40px; padding: .8rem 1.6rem; cursor: pointer; box-shadow: 5px 5px 0 var(--line); transition: transform .12s ease, top .12s ease, left .12s ease; }
+
+/* finale */
+.finaleMsg { font-size: clamp(2rem, 8vw, 4rem); font-weight: 700; background: linear-gradient(180deg, var(--accent2), var(--accent)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.finaleFrom { font-family: 'Caveat', cursive; font-size: 1.8rem; margin-top: 1rem; }
+
+/* chrome */
+.badge { position: fixed; bottom: .8rem; left: 50%; transform: translateX(-50%); z-index: 50; font-family: 'Poppins', sans-serif; font-size: .8rem; color: var(--ink); background: #fff; border: 2px solid var(--line); box-shadow: 2px 2px 0 var(--line); border-radius: 20px; padding: .35rem .9rem; }
+.ribbon { position: fixed; top: 0; left: 0; right: 0; z-index: 60; text-align: center; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: .85rem; color: #fff; background: var(--accent); padding: .5rem 1rem; box-shadow: 0 2px 8px rgba(0,0,0,.15); }
+.music { position: fixed; top: 1rem; right: 1rem; z-index: 30; width: 48px; height: 48px; border-radius: 50%; border: 2.5px solid var(--line); background: #fff; font-size: 1.3rem; cursor: pointer; box-shadow: 3px 3px 0 var(--line); }
+.confetti { position: fixed; inset: 0; pointer-events: none; z-index: 40; }
+.hide { display: none !important; }

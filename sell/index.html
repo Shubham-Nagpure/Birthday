@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wishtoria — Build a Surprise Website Gift in Minutes 🎁</title>
+    <meta name="description" content="Create a personalized, animated surprise website for someone you love — birthday, anniversary, or just because. Pick a template, fill in your story, and share the magic.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Poppins:wght@400;500;600&family=Caveat:wght@500;600;700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ LANDING VIEW ============ -->
+<div id="view-landing" class="view active">
+
+    <header class="nav">
+        <a href="#" class="brand"><span class="brand-mark">🎁</span> wishtoria</a>
+        <nav class="nav-links">
+            <a href="#how">How it works</a>
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#about">About</a>
+        </nav>
+        <button class="btn btn-nav" data-goto="templates">Create Today</button>
+    </header>
+
+    <section class="hero">
+        <div class="hero-inner">
+                        <span class="pill">✨ Made with love, in minutes</span>
+            <h1 class="hero-title">Build a <span class="grad-text">romantic surprise</span><br>website for someone you love.</h1>
+            <p class="hero-sub">A personalized, animated journey — their name, your story, a letter, a memory gallery, a puzzle, a quiz and a confetti finale. Pick your pages, fill in your words, and share the link. No code. No stress.</p>
+            <div class="hero-cta">
+                <button class="btn btn-lg" data-goto="templates"><span class="btn-spark">✦</span> Create Today <span class="btn-arrow">→</span></button>
+                <a href="../index.html" class="btn btn-ghost" target="_blank">See a live demo</a>
+            </div>
+            <div class="hero-trust">
+                <span>❤️ 2,400+ surprises made</span>
+                <span>⭐ 4.9 / 5 average</span>
+                <span>⚡ Ready in 10 minutes</span>
+            </div>
+        </div>
+        <div class="hero-card-stack" aria-hidden="true">
+            <div class="float-card fc1">📖 Your Story</div>
+            <div class="float-card fc2">📸 Memory Gallery</div>
+            <div class="float-card fc3">✉️ A Love Letter</div>
+            <div class="float-card fc4">🎁 Confetti Finale</div>
+        </div>
+    </section>
+
+    <section id="how" class="band">
+        <h2 class="band-title">How it works</h2>
+        <div class="steps-grid">
+            <div class="step-item"><span class="step-num">1</span><h3>Pick your plan</h3><p>Start with the Basic plan (4 pages) and add any extra pages you want.</p></div>
+            <div class="step-item"><span class="step-num">2</span><h3>Fill in your love</h3><p>Add their name, your story, letter, photos, quiz questions and reasons.</p></div>
+            <div class="step-item"><span class="step-num">3</span><h3>Share the magic</h3><p>We build it and send you a private link to share with your special someone.</p></div>
+        </div>
+    </section>
+
+    <section id="features" class="band band-alt">
+        <h2 class="band-title">Every page, made personal</h2>
+        <div class="feature-grid" id="feature-grid"></div>
+    </section>
+
+    <section id="pricing" class="band">
+        <h2 class="band-title">Simple, sweet pricing</h2>
+        <p class="band-sub">Start with Basic, add pages any time.</p>
+        <div class="pricing-grid">
+            <div class="price-card">
+                <h3 class="price-name">Basic</h3>
+                <div class="price-tag">$19<span>/site</span></div>
+                <p class="price-note">Perfect to get started</p>
+                <ul class="price-feats">
+                    <li>✓ Up to 4 pages</li>
+                    <li>✓ Personalized name intro</li>
+                    <li>✓ Love letter + memory gallery</li>
+                    <li>✓ Mobile friendly & animated</li>
+                    <li>✓ Private shareable link</li>
+                </ul>
+                <button class="btn btn-block" data-goto="templates">Choose Basic</button>
+            </div>
+            <div class="price-card price-featured">
+                <span class="price-badge">Most loved</span>
+                <h3 class="price-name">Premium</h3>
+                <div class="price-tag">$39<span>/site</span></div>
+                <p class="price-note">Everything, unlocked</p>
+                <ul class="price-feats">
+                    <li>✓ All 8 pages included</li>
+                    <li>✓ Background music</li>
+                    <li>✓ Sliding puzzle + quiz</li>
+                    <li>✓ Confetti finale surprise</li>
+                    <li>✓ Custom domain support</li>
+                </ul>
+                <button class="btn btn-block" data-goto="templates">Choose Premium</button>
+            </div>
+            <div class="price-card">
+                <h3 class="price-name">Add-on pages</h3>
+                <div class="price-tag">$5<span>/page</span></div>
+                <p class="price-note">Mix & match</p>
+                <ul class="price-feats">
+                    <li>✓ Do You Know story</li>
+                    <li>✓ Sliding photo puzzle</li>
+                    <li>✓ Interactive quiz</li>
+                    <li>✓ Confetti finale</li>
+                    <li>✓ Add to any plan</li>
+                </ul>
+                <button class="btn btn-block" data-goto="templates">Build custom</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-final">
+        <h2>Ready to make them smile?</h2>
+        <p>It only takes a few minutes to create something they'll never forget.</p>
+        <button class="btn btn-lg" data-goto="templates"><span class="btn-spark">✦</span> Create Today <span class="btn-arrow">→</span></button>
+    </section>
+
+    <section id="about" class="band band-alt">
+        <h2 class="band-title">About us</h2>
+        <div class="about-wrap">
+            <p class="about-text">
+                wishtoria is a tiny studio with one big goal: help you turn a simple “I was thinking of you”
+                into a website they'll never forget. Every template, animation and little detail is crafted
+                so that anyone — no coding needed — can gift a moment that feels personal and magical. 💛
+            </p>
+            <p class="about-text">Follow along, see new templates, and share your creations with us:</p>
+            <a class="insta-btn" href="https://www.instagram.com/giftme.space/" target="_blank" rel="noopener">
+                <span class="insta-ico">📸</span> @giftme.space on Instagram
+            </a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <span>🎁 wishtoria</span>
+        <span>
+            <a href="https://www.instagram.com/giftme.space/" target="_blank" rel="noopener" class="footer-insta">📸 Instagram</a>
+            · Made for the ones who love out loud.
+        </span>
+    </footer>
+</div>
+
+<!-- ============ TEMPLATE SELECTION VIEW ============ -->
+<div id="view-templates" class="view">
+    <header class="nav">
+        <a href="#" class="brand" data-goto="landing"><span class="brand-mark">🎁</span> wishtoria</a>
+        <button class="btn btn-ghost btn-nav" data-goto="landing">← Back home</button>
+    </header>
+    <div class="wizard">
+        <div class="wizard-head">
+            <span class="pill">Step 1 of 3 · Pick a template</span>
+            <h1 class="wizard-title">Choose a vibe</h1>
+            <p class="wizard-sub">Each template sets the colours, mood and a starter set of pages. You can tweak everything in the next step.</p>
+        </div>
+        <div class="template-grid" id="template-grid"></div>
+    </div>
+</div>
+
+<!-- ============ PLAN SELECTION VIEW ============ -->
+<div id="view-plans" class="view">
+    <header class="nav">
+        <a href="#" class="brand" data-goto="landing"><span class="brand-mark">🎁</span> wishtoria</a>
+        <button class="btn btn-ghost btn-nav" data-goto="templates">← Change template</button>
+    </header>
+
+    <div class="wizard">
+        <div class="wizard-head">
+            <span class="pill">Step 2 of 3 · Choose your plan</span>
+            <h1 class="wizard-title">Build your surprise</h1>
+            <p class="wizard-sub" id="plan-blurb">Basic includes any 4 pages. Toggle pages on or off — extra pages beyond 4 are just <strong>₹399 each</strong>.</p>
+        </div>
+
+        <div class="plan-toggle">
+            <button class="plan-pill" data-plan="free">Simple · Free 🎬</button>
+            <button class="plan-pill active" data-plan="basic">Basic · ₹1499</button>
+            <button class="plan-pill" data-plan="premium">Premium · ₹2999</button>
+        </div>
+
+        <div class="page-picker" id="page-picker"></div>
+
+        <div class="summary-bar">
+            <div class="summary-info">
+                <span id="summary-count">0 pages selected</span>
+                <span class="summary-total" id="summary-total">$19</span>
+            </div>
+            <button class="btn btn-lg" id="to-form-btn">Continue to details <span class="btn-arrow">→</span></button>
+        </div>
+    </div>
+</div>
+
+<!-- ============ FORM / BUILDER VIEW ============ -->
+<div id="view-form" class="view">
+    <header class="nav">
+        <a href="#" class="brand" data-goto="landing"><span class="brand-mark">🎁</span> wishtoria</a>
+        <button class="btn btn-ghost btn-nav" data-goto="plans">← Change pages</button>
+    </header>
+
+    <div class="wizard">
+        <div class="wizard-head">
+            <span class="pill">Step 2 of 3 · Add your details</span>
+            <h1 class="wizard-title">Fill in your love story</h1>
+            <p class="wizard-sub">Only the pages you picked are shown. Everything is optional — but the more you add, the more magical it feels. 💫</p>
+        </div>
+
+        <form id="builder-form" class="builder-form" novalidate>
+            <div id="form-sections"></div>
+
+            <div class="summary-bar">
+                <button type="button" class="btn btn-ghost" data-goto="plans">← Back</button>
+                <button type="submit" class="btn btn-lg">Review my surprise <span class="btn-arrow">→</span></button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- ============ REVIEW / DONE VIEW ============ -->
+<div id="view-done" class="view">
+    <header class="nav">
+        <a href="#" class="brand" data-goto="landing"><span class="brand-mark">🎁</span> wishtoria</a>
+    </header>
+    <div class="wizard">
+        <div class="done-hero">
+            <div class="done-emoji">🎉</div>
+            <h1 class="wizard-title">Your surprise is ready to build!</h1>
+            <p class="wizard-sub">Here's a summary of everything you added. Confirm and we'll craft your website and send the private link to your email.</p>
+        </div>
+        <div class="review-card" id="review-summary"></div>
+
+        <div class="field" style="max-width:420px;margin:1.2rem auto 0">
+            <label>Your email <span class="hint">(we send your private link here)</span></label>
+            <input type="email" id="buyer-email" placeholder="you@example.com">
+        </div>
+
+        <div class="summary-bar">
+            <button type="button" class="btn btn-ghost" data-goto="form">← Edit details</button>
+            <button type="button" class="btn btn-ghost" id="preview-btn">👁 Preview</button>
+            <button type="button" class="btn btn-lg" id="confirm-btn"><span class="btn-spark">✦</span> Pay & build my site</button>
+        </div>
+
+        <div id="preview-box" class="preview-box hidden">
+            <h3>👀 Live preview</h3>
+            <p>This is exactly what they'll see. Scan or open the link to test it on your phone — it's watermarked until you publish.</p>
+            <div class="preview-row">
+                <img id="preview-qr" class="site-qr" alt="Preview QR code">
+                <div class="preview-linkwrap">
+                    <a id="preview-link" class="site-link" href="#" target="_blank"></a>
+                    <div class="final-actions">
+                        <a id="preview-open" class="btn" href="#" target="_blank">Open preview ↗</a>
+                        <button class="btn btn-ghost" id="preview-copy">📋 Copy link</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="pay-status" class="final-msg hidden" style="background:#FFF7FA"></div>
+
+        <div id="final-msg" class="final-msg hidden">
+            <h2>💌 Your surprise is live!</h2>
+            <p>Share this private link with your special someone:</p>
+            <p><a id="site-link" class="site-link" href="#" target="_blank"></a></p>
+            <img id="site-qr" class="site-qr" alt="QR code for your surprise link">
+            <p class="qr-hint">Scan the QR or copy the link. 💖</p>
+            <div class="final-actions">
+                <button class="btn btn-ghost" id="copy-link-btn">📋 Copy link</button>
+                <button class="btn btn-ghost" id="download-btn">⬇ Download my content (.json)</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ============ AD INTERSTITIAL (free plan) ============ -->
+<div id="ad-overlay" class="ad-overlay hidden">
+    <div class="ad-modal">
+        <p class="ad-label">Advertisement · your free surprise loads after this</p>
+        <div class="ad-slot" id="ad-slot">
+            <!--
+              PASTE YOUR GOOGLE ADSENSE UNIT HERE.
+              e.g.  <ins class="adsbygoogle" style="display:block"
+                         data-ad-client="ca-pub-XXXX" data-ad-slot="YYYY"
+                         data-ad-format="auto"></ins>
+                    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+              Until then, this placeholder is shown.
+            -->
+            <div class="ad-placeholder">
+                <span class="ad-ph-emoji">🎬</span>
+                <strong>Your ad could be here</strong>
+                <span>Free surprises are supported by a short ad.</span>
+            </div>
+        </div>
+        <button class="btn ad-continue" id="ad-continue" disabled>Continue in <span id="ad-count">5</span>s…</button>
+        <button class="ad-upgrade" id="ad-upgrade">Skip ads — upgrade to a paid plan</button>
+    </div>
+</div>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

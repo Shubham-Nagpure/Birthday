@@ -2,7 +2,7 @@ import Link from "next/link";
 import { PAGES } from "@/lib/pages";
 import s from "./Landing.module.css";
 
-const INSTA = "https://www.instagram.com/giftme.space/";
+const INSTA = "https://www.instagram.com/wishtoria.in/";
 
 export function Landing() {
   return (
@@ -91,7 +91,7 @@ export function Landing() {
           <h2 className={s.bandTitle}>About us</h2>
           <div className={s.about}>
             <p className={s.aboutText}>wishtoria is a tiny studio with one big goal: help you turn a simple “I was thinking of you” into a website they'll never forget. Every template and detail is crafted so anyone — no coding — can gift a moment that feels personal and magical. 💛</p>
-            <a className={s.insta} href={INSTA} target="_blank" rel="noopener">📸 @giftme.space on Instagram</a>
+            <a className={s.insta} href={INSTA} target="_blank" rel="noopener">📸 @wishtoria.in on Instagram</a>
           </div>
         </div>
       </section>

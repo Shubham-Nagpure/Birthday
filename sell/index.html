@@ -10,6 +10,40 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Poppins:wght@400;500;600&family=Caveat:wght@500;600;700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon (swap favicon.png for your own when ready) -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Burgundy brand palette (matches the wishtoria logo) — scoped to this file -->
+    <style>
+        /* !important so this palette beats the per-template colours script.js
+           applies inline on load (for this preview it forces the burgundy theme). */
+        :root {
+            --accent: #57072F !important;                                              /* burgundy */
+            --accent-strong: #460626 !important;                                       /* dark wine */
+            --accent-grad: linear-gradient(180deg, #57072F 0%, #460626 100%) !important;
+            --ink: #460626 !important;                                                 /* dark wine text */
+            --ink-soft: #A15D66 !important;                                            /* muted mauve */
+            --line: #460626 !important;                                                /* borders / hard shadow */
+            --bg-gradient: linear-gradient(135deg, #FFFDF4 0%, #F4E6EA 100%) !important; /* cream -> faint mauve */
+            --card-bg: #FFFDF4 !important;                                             /* cream card */
+            --card-soft: #FBF2F3 !important;
+            --border-soft: rgba(70, 6, 38, 0.12) !important;
+        }
+        /* cream text on burgundy buttons, to match the logo's cream 'w' */
+        .btn { color: #FFFDF4; }
+        .btn-ghost { color: var(--ink); }
+        /* Solid burgundy for the highlighted word — reliably visible (no
+           background-clip:text, which was rendering the text invisible). */
+        .grad-text {
+            background: none !important;
+            -webkit-text-fill-color: #57072F !important;
+            color: #57072F !important;
+        }
+        /* logo lockup in the nav + footer */
+        .brand-logo { height: 40px; width: auto; display: block; }
+        .footer .brand-logo { height: 34px; }
+    </style>
 </head>
 <body>
 
@@ -17,7 +51,7 @@
 <div id="view-landing" class="view active">
 
     <header class="nav">
-        <a href="#" class="brand"><span class="brand-mark">🎁</span> wishtoria</a>
+        <a href="#" class="brand"><img src="wishtoria-logo.svg" class="brand-logo" alt="wishtoria"></a>
         <nav class="nav-links">
             <a href="#how">How it works</a>
             <a href="#features">Features</a>
@@ -126,16 +160,16 @@
                 so that anyone — no coding needed — can gift a moment that feels personal and magical. 💛
             </p>
             <p class="about-text">Follow along, see new templates, and share your creations with us:</p>
-            <a class="insta-btn" href="https://www.instagram.com/giftme.space/" target="_blank" rel="noopener">
-                <span class="insta-ico">📸</span> @giftme.space on Instagram
+            <a class="insta-btn" href="https://www.instagram.com/wishtoria.in/" target="_blank" rel="noopener">
+                <span class="insta-ico">📸</span> @wishtoria.in on Instagram
             </a>
         </div>
     </section>
 
     <footer class="footer">
-        <span>🎁 wishtoria</span>
+        <span><img src="wishtoria-logo.svg" class="brand-logo" alt="wishtoria"></span>
         <span>
-            <a href="https://www.instagram.com/giftme.space/" target="_blank" rel="noopener" class="footer-insta">📸 Instagram</a>
+            <a href="https://www.instagram.com/wishtoria.in/" target="_blank" rel="noopener" class="footer-insta">📸 Instagram</a>
             · Made for the ones who love out loud.
         </span>
     </footer>
@@ -144,7 +178,7 @@
 <!-- ============ TEMPLATE SELECTION VIEW ============ -->
 <div id="view-templates" class="view">
     <header class="nav">
-        <a href="#" class="brand" data-goto="landing"><span class="brand-mark">🎁</span> wishtoria</a>
+        <a href="#" class="brand" data-goto="landing"><img src="wishtoria-logo.svg" class="brand-logo" alt="wishtoria"></a>
         <button class="btn btn-ghost btn-nav" data-goto="landing">← Back home</button>
     </header>
     <div class="wizard">
@@ -160,7 +194,7 @@
 <!-- ============ PLAN SELECTION VIEW ============ -->
 <div id="view-plans" class="view">
     <header class="nav">
-        <a href="#" class="brand" data-goto="landing"><span class="brand-mark">🎁</span> wishtoria</a>
+        <a href="#" class="brand" data-goto="landing"><img src="wishtoria-logo.svg" class="brand-logo" alt="wishtoria"></a>
         <button class="btn btn-ghost btn-nav" data-goto="templates">← Change template</button>
     </header>
 
@@ -192,7 +226,7 @@
 <!-- ============ FORM / BUILDER VIEW ============ -->
 <div id="view-form" class="view">
     <header class="nav">
-        <a href="#" class="brand" data-goto="landing"><span class="brand-mark">🎁</span> wishtoria</a>
+        <a href="#" class="brand" data-goto="landing"><img src="wishtoria-logo.svg" class="brand-logo" alt="wishtoria"></a>
         <button class="btn btn-ghost btn-nav" data-goto="plans">← Change pages</button>
     </header>
 
@@ -217,7 +251,7 @@
 <!-- ============ REVIEW / DONE VIEW ============ -->
 <div id="view-done" class="view">
     <header class="nav">
-        <a href="#" class="brand" data-goto="landing"><span class="brand-mark">🎁</span> wishtoria</a>
+        <a href="#" class="brand" data-goto="landing"><img src="wishtoria-logo.svg" class="brand-logo" alt="wishtoria"></a>
     </header>
     <div class="wizard">
         <div class="done-hero">
@@ -292,6 +326,61 @@
         <button class="ad-upgrade" id="ad-upgrade">Skip ads — upgrade to a paid plan</button>
     </div>
 </div>
+
+<!-- ============ COMING SOON (launch teaser) ============ -->
+<div id="coming-soon" class="cs-overlay hidden" aria-hidden="true">
+    <div class="cs-floats" aria-hidden="true">
+        <span style="left:8%;animation-duration:7s;animation-delay:0s">💗</span>
+        <span style="left:24%;animation-duration:9s;animation-delay:1.4s">💝</span>
+        <span style="left:44%;animation-duration:6s;animation-delay:.7s">✨</span>
+        <span style="left:63%;animation-duration:8.5s;animation-delay:2s">💗</span>
+        <span style="left:80%;animation-duration:7.5s;animation-delay:1s">💌</span>
+        <span style="left:91%;animation-duration:10s;animation-delay:2.6s">✨</span>
+    </div>
+    <div class="cs-card">
+        <button class="cs-close" aria-label="Close">✕</button>
+        <span class="cs-heart">💝</span>
+        <h2 class="cs-title">Crafting hearts…</h2>
+        <p class="cs-sub">wishtoria is almost ready — we're wrapping up something lovely just for you. Launching soon! 💌</p>
+        <a href="https://www.instagram.com/wishtoria.in/" target="_blank" rel="noopener" class="btn cs-follow" data-cs-allow>Follow us for launch 📸</a>
+    </div>
+</div>
+
+<style>
+    .cs-overlay { position: fixed; inset: 0; z-index: 99999; display: flex; align-items: center; justify-content: center; padding: 1.2rem; background: rgba(70, 6, 38, 0.55); backdrop-filter: blur(8px); animation: csfade .3s ease; }
+    .cs-overlay.hidden { display: none; }
+    @keyframes csfade { from { opacity: 0; } to { opacity: 1; } }
+    .cs-card { position: relative; z-index: 2; background: #FFFDF4; border: 3px solid #460626; box-shadow: 10px 10px 0 #460626; border-radius: 28px; max-width: 420px; width: 100%; padding: 2.6rem 1.8rem 2.2rem; text-align: center; animation: cspop .45s cubic-bezier(.2,.9,.28,1); }
+    @keyframes cspop { from { transform: translateY(18px) scale(.95); opacity: 0; } to { transform: none; opacity: 1; } }
+    .cs-heart { font-size: 4rem; display: inline-block; animation: csbeat 1.2s ease-in-out infinite; }
+    @keyframes csbeat { 0%,100% { transform: scale(1); } 15% { transform: scale(1.22); } 30% { transform: scale(1); } 45% { transform: scale(1.14); } }
+    .cs-title { font-family: 'Fredoka', sans-serif; font-size: 1.9rem; font-weight: 700; color: #460626; margin: .5rem 0 .5rem; }
+    .cs-sub { font-family: 'Poppins', sans-serif; color: #A15D66; line-height: 1.65; margin-bottom: 1.4rem; }
+    .cs-follow { color: #FFFDF4; }
+    .cs-close { position: absolute; top: .8rem; right: .9rem; width: 34px; height: 34px; border-radius: 50%; border: 2.5px solid #460626; background: #FFFDF4; color: #460626; font-weight: 700; cursor: pointer; box-shadow: 3px 3px 0 #460626; transition: transform .12s, box-shadow .12s; }
+    .cs-close:hover { transform: translate(-1px,-1px); box-shadow: 4px 4px 0 #460626; background: #FBEFE3; }
+    .cs-floats { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 1; }
+    .cs-floats span { position: absolute; bottom: -8%; font-size: 1.3rem; opacity: .85; animation-name: csrise; animation-timing-function: linear; animation-iteration-count: infinite; }
+    @keyframes csrise { to { transform: translateY(-115vh) rotate(50deg); opacity: 0; } }
+</style>
+
+<script>
+    /* Launch teaser: every click on the page opens the "coming soon" popup. */
+    (function () {
+        var overlay = document.getElementById("coming-soon");
+        var open = function () { overlay.classList.remove("hidden"); overlay.setAttribute("aria-hidden", "false"); };
+        var close = function () { overlay.classList.add("hidden"); overlay.setAttribute("aria-hidden", "true"); };
+        document.addEventListener("click", function (e) {
+            var t = e.target.closest("a, button");
+            if (!t) return;
+            if (t.classList.contains("cs-close")) { e.preventDefault(); e.stopPropagation(); close(); return; }
+            if (t.hasAttribute("data-cs-allow")) return;         // e.g. the Instagram follow link
+            e.preventDefault(); e.stopPropagation(); open();     // everything else -> popup
+        }, true);
+        overlay.addEventListener("click", function (e) { if (e.target === overlay) close(); });
+        document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+    })();
+</script>
 
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script src="script.js"></script>
